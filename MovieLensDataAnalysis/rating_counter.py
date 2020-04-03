@@ -13,7 +13,7 @@ def main():
     sc.setLogLevel(logLevel='ERROR')
 
     # Reading the data file in RDD
-    data = sc.textFile("file:///E:/Learning/PyCharm/PySpark/Resources/MovieLens/u.data")
+    data = sc.textFile("../Resources/MovieLens/u.data")
 
     # Extracting the ratings from the data
     ratings = data.map(lambda line: line.split()[2])

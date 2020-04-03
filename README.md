@@ -1,5 +1,8 @@
 # Data Processing Using PySpark
 The project contains the scripts to process data, residing inside the Resources directory, using PySpark.
+#Prerequisite
+Spark should be setup on the machine. To get the latest version of spark 
+[click here](https://spark.apache.org/downloads.html "spark.apache.org")
 # Getting Started
 Following instructions will get you a copy of the project up and running on your local machine for development and testing 
 purposes.
