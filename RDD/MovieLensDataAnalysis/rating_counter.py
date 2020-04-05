@@ -1,19 +1,26 @@
-from pyspark import SparkConf, SparkContext
+from pyspark import SparkConf
+from pyspark import SparkContext
 from collections import OrderedDict
 
 
 def main():
-    # Preparing the configuration for spark
+    """
+    The driver function. It is responsible for applying all transformation and will print the results onto the console.
+
+    :return:
+    """
+
+    # Setting the job configurations
     conf = SparkConf().setMaster('local').setAppName('RatingsHistogram')
 
-    # Creating a spark context.
+    # Creating the entry point to spark functionality
     sc = SparkContext(conf=conf)
 
     # Setting the log level to ERROR
     sc.setLogLevel(logLevel='ERROR')
 
-    # Reading the data file in RDD
-    data = sc.textFile("../Resources/MovieLens/u.data")
+    # Extracting data from the data file into RDD
+    data = sc.textFile("../../Resources/MovieLens/u.data")
 
     # Extracting the ratings from the data
     ratings = data.map(lambda line: line.split()[2])
