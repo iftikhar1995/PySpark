@@ -21,3 +21,25 @@ purposes.
     1. Open a script.
     2. Right click on it.
     3. In the Menu, click `Run <script_name>.py` to execute spark job. 
+ 
+ # Project Structure
+ Below is the project structure:
+ ```
+    PySpark
+        |- RDD
+        |   |-<data>DataAnalysis
+        |   |        |- scripts(*.py)
+        |
+        |- Resources
+        |   |-<data>
+        |        |- data files (*.txt| *.csv etc.)
+```
+
+- **PySpark :** The main folder. It contains all the scripts and resources.
+  - **RDD :** The folder contains all spark scripts which are using RDDs
+    - **\<data\>DataAnalysis :** The folder contains the spark scripts that are performing analysis on the `_\<data\>_`.
+       The `_\<data\>_` is just a placeholder, which will be replaced by `folder name` mentioned in `Resources` folder.
+      - **scripts(\*.py) :** The spark script which is performing analysis on the data provided in `Resources` folder.
+  - **Resources :** The folder contains the data on which we are doing analysis.
+    - **\<data\> :** The folders containing the data files
+      - **data files (\*.txt| \*.csv etc.) :** The actual data files                                
